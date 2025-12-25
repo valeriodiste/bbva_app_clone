@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MooneyGo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Main font -->
+	<!-- <link rel="stylesheet" type="text/css" href="./css/font.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css">
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="./icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+	<!-- Manifest file -->
+	<link rel="manifest" href="manifest.json">
+	<!-- Website & PWA Colors -->
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&family=Noto+Sans+HK:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div id="main">
+
+		
+		<!-- Main section -->
+		<div id="main-section" class="">
+			<!-- Add the image -->
+			<div class="screenshots-container">
+				<img src="./screenshots/screenshot_01.png">
+			</div>
+			<!-- Overlay for the top part -->
+			<div id="overlay-1"></div>
+			<div id="scroll-tabs-1" class="scroll-tabs">
+				<div class="scroll-tabs-container">
+					<!-- Scroll tab -->
+					<div id="scroll-tab-1" class="scroll-tab">
+						<div class="tab-val-1">
+							<span class="price-num">289,76</span>
+							<span class="price-euro">€</span>
+						</div>
+						<div class="tab-val-2">
+							<span class="clickable-text">
+								Vedi uscite
+							</span>
+						</div>
+					</div>
+					<!-- Scroll tab -->
+					<div id="scroll-tab-2" class="scroll-tab">
+						<div class="tab-val-1">
+							<span class="price-num">3.672,50</span>
+							<span class="price-euro">€</span>
+						</div>
+						<div class="tab-val-2">
+							<span class="clickable-text">
+								Vedi entrate
+							</span>
+						</div>
+					</div>
+					<!-- Scroll tab -->
+					<div id="scroll-tab-3" class="scroll-tab">
+						<div class="tab-val-1">
+							<span class="price-num">0,00</span>
+							<span class="price-euro">€</span>
+						</div>
+						<div class="tab-val-2">
+							<span class="clickable-text">
+								Vedi risparmi
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Overlay for the date of the ticket -->
+			<div id="balance-1" class="account-balance">
+				<div class="balance">
+					<span id="balance-1-value">263.387,37</span>
+					<span style="font-size:0.7em;margin-left:0.15em;">€</span>
+				</div>
+				<div>Disponibile</div>
+			</div>
+			<div id="balance-2" class="account-balance">
+				<div class="balance">
+					<span id="balance-1-value">13.387,37</span>
+					<span style="font-size:0.7em;margin-left:0.15em;">€</span>
+				</div>
+				<div>2 ore fa</div>
+			</div>
+			<!-- Click area for the button -->
+			<div id="main-section-button"></div>
+		</div>
+		
+		<!-- Secondary section -->
+		<div id="secondary-section" class="hidden">
+			<!-- Add the image -->
+			<div class="screenshots-container" >
+				<img src="./screenshots/screenshot_02.png"/>
+			</div>
+			<!-- "Back" button click area -->
+			<div id="back-button"></div>
+			<!-- Actual active ticket elements -->
+			<div class="active-ticket-container">
+				<!-- Header -->
+				<div class="active-ticket-header">
+					<div class="back-button arrow-white"></div>
+					<div class="header-title">Ticket attivo</div>
+					<div class="empty-aligner-div"></div>
+				</div>
+				<div class="actual-ticket">
+					<!-- Central div -->
+					<div class="central-div">
+						<!-- BIS logo -->
+						<div class="ticket-bis-logo">
+							<img src="./images/bis_logo.png">
+						</div>
+						<!-- Ticket description -->
+						<div class="ticket-text">
+							<div class="ticket-title">
+								PALOMBARA SABINA - Corsa Semplice
+							</div>
+							<div class="ticket-description">
+								Questo tipo di biglietto di corsa semplice consente di viaggiare su una singola linea fra tutte quelle gestite. Esso è valido per una sola corsa.
+							</div>
+						</div>
+						<!-- QR Code section container -->
+						<div class="ticket-qr">
+							<div class="qr-section-header">
+								<div class="qr-section-header-left">
+									<div class="ticket-icon">
+										<img src="./images/ticket_icon.png">
+									</div>
+									<div>
+										Controllo e validazione
+									</div>
+								</div>
+								<div class="arrow-blue"></div>
+							</div>
+							<div class="qr-code-image">
+								<!-- NOTE: Sample QR code corresponds to http://mccr.it/vt?t=20052168&v=0735 -->
+								<div id="qr-code"></div>
+							</div>
+							<div class="qr-section-footer">
+								<div class="qr-button-text">Ingrandisci QRCode</div>
+								<div class="ticket-infos">
+									<div class="ticket-infos-left">
+										<div class="clock-icon">
+											<img src="./images/clock_icon.png"/>
+										</div>
+										<div class="current-time" id="current-time">
+											00:00:00
+										</div>
+									</div>
+									<div class="ticket-infos-right">
+										<div class="load-bar">
+											<div id="ticket-load-bar" class="load-bar-inner"></div>
+										</div>
+										<div class="lock-icon">
+											<img src="./images/lock_icon.png"/>
+										</div>
+										<div class="ticket-code">042</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Wave animation section container -->
+						<div class="ticket-animation">
+							<div class="wave-parts-container">
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
+							</div>
+						</div>
+						<!-- Other ticket infos -->
+						<div class="ticket-other-infos">
+							<div class="ticket-activation-info">
+								Attivato il: <span id="ticket-activation-date">???</span>
+							</div>
+							<div>
+								Emesso il:
+								<br>
+								<span id="ticket-emission-date">???</span>
+							</div>
+							<div class="cost-info">
+								<div>
+									Costo:
+								</div>
+								<div>
+									1,10 €
+								</div>
+							</div>
+							<div class="details-info">
+								<div>
+									Dettagli
+								</div>
+								<div>
+									<div>
+										Leggi tutto
+									</div>
+									<div class="arrow-blue"></div>
+								</div>
+							</div>
+							<div class="ticket-code-info">
+								<div>
+									Codice ticket:
+								</div>
+								<div>
+									3/<span id="ticket-code">26982</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+	<script src="script.js"></script>
+
+</body>
+</html>
