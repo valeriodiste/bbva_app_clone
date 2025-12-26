@@ -69,7 +69,7 @@ img {
 }
 @media (pointer:none), (pointer:coarse) {
 	#main {
-		/* height: 100vh; */
+		height: 100vh;
 	}
 }
 #main-section {
