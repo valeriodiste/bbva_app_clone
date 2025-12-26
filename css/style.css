@@ -64,7 +64,8 @@ img {
 	justify-content: flex-start;
 	align-items: center;
 	width: 100vw;
-	height: 93vh;
+	/* height: 93vh; */
+	height: 100vh;
 	position: relative;
 }
 #main-section {
@@ -602,9 +603,9 @@ img {
 	line-height: 1em;
 }
 @media (pointer:none), (pointer:coarse) {
-	#main {
+	/* #main {
 		height: 100vh;
-	}
+	} */
 	.screenshots-container img {
 		top: -7vh;
 	}
