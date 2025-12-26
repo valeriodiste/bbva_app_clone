@@ -9,6 +9,7 @@
 	--green-color: #358551;
 	/* --green-color: #2f8d3e; */
 	--prova: #eff5f7;
+	--v-margin:
 }
 * {
 	margin: 0;
@@ -59,7 +60,7 @@ img {
 	justify-content: flex-start;
 	align-items: center;
 	width: 100vw;
-	height: 100vh;
+	height: 93vh;
 	position: relative;
 }
 #main-section {
@@ -92,7 +93,7 @@ img {
 	width: 100%;
 	height: 10vh;
 	position: absolute;
-	top: 14.5vh;
+	top: 11.0vh;
 	/* left: 53vw; */
 	background-color: #000519;
 	font-size: 0.9em;
@@ -112,7 +113,7 @@ img {
 	width: 40%;
 	height: 8.5vh;
 	position: absolute;
-	top: 33.15vh;
+	/* top: 33.15vh; */
 	left: 53vw;
 	background-color: #11192d;
 	font-size: 0.9em;
@@ -144,13 +145,16 @@ img {
 	align-items: baseline;
 }
 #balance-1 {
-	top: 33.15vh;
+	/* top: 33.15vh - 3.5vh; */
+	top: 29.65vh;
 }
 #balance-2 {
-	top: 51.15vh;
+	/* top: 51.15vh - 3.5vh; */
+	top: 47.65vh;
 }
 #scroll-tabs-1 {
-	top: 14vh;
+	/* top: 14vh - 3.5vh; */
+	top: 10.5vh;
 }
 .scroll-tabs {
 	position: absolute;
