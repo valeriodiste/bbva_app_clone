@@ -67,11 +67,6 @@ img {
 	height: 93vh;
 	position: relative;
 }
-@media (pointer:none), (pointer:coarse) {
-	#main {
-		height: 100vh;
-	}
-}
 #main-section {
 	width: 100%;
 	height: 100%;
@@ -114,7 +109,7 @@ img {
 	color: #ffffff;
 	/* Set opacity and border for testing */
 	/* border: white 2px solid; */
-	opacity: 50%;
+	/* opacity: 50%; */
 }
 /* Button mask */
 .account-balance {
@@ -605,4 +600,12 @@ img {
 	justify-content: flex-start;
 	align-items: center;
 	line-height: 1em;
+}
+@media (pointer:none), (pointer:coarse) {
+	#main {
+		height: 100vh;
+	}
+	.screenshots-container img {
+		top: -5.25vh;
+	}
 }
