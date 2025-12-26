@@ -107,4 +107,9 @@ $(document).ready(function () {
 		togglePriceValues(priceValuesOn);
 	});
 
+	// After 500ms, make the "#main" section opacity visible (1)
+	setTimeout(function () {
+		$("#main").css("opacity", 1);
+	}, 500);
+
 });
