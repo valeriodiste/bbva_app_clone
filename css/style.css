@@ -9,7 +9,6 @@
 	--green-color: #358551;
 	/* --green-color: #2f8d3e; */
 	--prova: #eff5f7;
-	--v-margin:
 }
 * {
 	margin: 0;
@@ -62,6 +61,11 @@ img {
 	width: 100vw;
 	height: 93vh;
 	position: relative;
+}
+@media (pointer:none), (pointer:coarse) {
+	#main {
+		height: 100vh;
+	}
 }
 #main-section {
 	width: 100%;
