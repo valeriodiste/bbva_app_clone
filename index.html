@@ -27,7 +27,7 @@
 	<!-- Website & PWA Colors -->
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#11192d">
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +41,7 @@
 		<div id="main-section" class="">
 			<!-- Add the image -->
 			<div class="screenshots-container">
-				<img src="./screenshots/screenshot_01.png">
+				<img src="./screenshots/screenshot_01_2.png">
 			</div>
 			<!-- Overlay for the top part -->
 			<div id="overlay-1"></div>
@@ -50,7 +50,7 @@
 					<!-- Scroll tab -->
 					<div id="scroll-tab-1" class="scroll-tab">
 						<div class="tab-val-1">
-							<span class="price-num">289,76</span>
+							<span class="price-num price-val">289,76</span>
 							<span class="price-euro">€</span>
 						</div>
 						<div class="tab-val-2">
@@ -62,7 +62,7 @@
 					<!-- Scroll tab -->
 					<div id="scroll-tab-2" class="scroll-tab">
 						<div class="tab-val-1">
-							<span class="price-num">3.672,50</span>
+							<span class="price-num price-val">3.672,50</span>
 							<span class="price-euro">€</span>
 						</div>
 						<div class="tab-val-2">
@@ -74,7 +74,7 @@
 					<!-- Scroll tab -->
 					<div id="scroll-tab-3" class="scroll-tab">
 						<div class="tab-val-1">
-							<span class="price-num">0,00</span>
+							<span class="price-num price-val">0,00</span>
 							<span class="price-euro">€</span>
 						</div>
 						<div class="tab-val-2">
@@ -87,21 +87,30 @@
 			</div>
 			<!-- Overlay for the date of the ticket -->
 			<div id="balance-1" class="account-balance">
+				<div class="small-balance">
+					<span id="balance-1-value" class="price-val">263.387,37</span>
+					<span style="margin-left:0.15em;">€</span>
+				</div>
 				<div class="balance">
-					<span id="balance-1-value">263.387,37</span>
+					<span id="balance-1-value" class="price-val">263.387,37</span>
 					<span style="font-size:0.7em;margin-left:0.15em;">€</span>
 				</div>
 				<div>Disponibile</div>
 			</div>
 			<div id="balance-2" class="account-balance">
+				<div class="small-balance">
+					<span id="balance-1-value" class="price-val">263.387,37</span>
+					<span style="margin-left:0.15em;">€</span>
+				</div>
 				<div class="balance">
-					<span id="balance-1-value">13.387,37</span>
+					<span id="balance-1-value" class="price-val">13.387,37</span>
 					<span style="font-size:0.7em;margin-left:0.15em;">€</span>
 				</div>
 				<div>2 ore fa</div>
 			</div>
-			<!-- Click area for the button -->
+			<!-- Click area for the buttons -->
 			<div id="main-section-button"></div>
+			<div id="price-values-toggle"></div>
 		</div>
 		
 		<!-- Secondary section -->
@@ -247,7 +256,6 @@
 
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 	<script src="script.js"></script>
 
 </body>
