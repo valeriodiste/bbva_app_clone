@@ -21,6 +21,9 @@ html, body {
 	user-select: none;
 	color: #151515;
 }
+body {
+	background-color: #000519;
+}
 img {
 	user-select: none;
 	pointer-events: none;
