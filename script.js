@@ -92,7 +92,7 @@ $(document).ready(function () {
 	});
 
 	// At start, show the main page
-	toggleSecondaryPage(true);
+	toggleSecondaryPage(false);
 
 	// Get the price values elements and map their text values
 	let priceValues = $(".price-val");
