@@ -3,8 +3,8 @@
 	"short_name": "BBVA",
 	"start_url": "index.html",
 	"display": "standalone",
-	"background_color": "#00587d",
-	"theme_color": "#00587d",
+	"background_color": "#11192d",
+	"theme_color": "#11192d",
 	"icons": [
 		{
 			"src": ".\/icons\/android-icon-36x36.png",
