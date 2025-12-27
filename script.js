@@ -49,7 +49,7 @@ function toggleSeconndaryPage(activate) {
 $(document).ready(function () {
 
 	// Call the function to show the screen, window, and document dimensions on the page
-	showDimensions();
+	// showDimensions();
 
 	// Add click functions to the main section button to go to the secondary page
 	let selectedOpacity = 0.3;

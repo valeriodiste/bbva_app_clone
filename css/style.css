@@ -52,9 +52,9 @@ img {
 }
 .screenshots-container img {
 	/* object-fit: cover; */
-	object-fit: contain;
+	object-fit: cover;
 	position: absolute;
-	top: -3.5vh;
+	/* top: -3.5vh; */
 	left: 0;
 }
 /* Main content container */
@@ -606,7 +606,4 @@ img {
 	/* #main {
 		height: 100vh;
 	} */
-	.screenshots-container img {
-		top: -7vh;
-	}
 }
