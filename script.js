@@ -2,7 +2,7 @@
 function showDimensions() {
 
 	// Add a div with, inside, the dimensions of the screen, the window, and the document
-	$('#main').append('<div id="dimensions" style="z-index: 10; font-size: 24px; color: #ffffff;"></div>');
+	$('#main').append('<div id="dimensions" style="z-index: 10; font-size: 24px; color: #ffffff; background-color: #00000050;"></div>');
 	$('#dimensions').append('<div id="screen"></div>');
 	$('#dimensions').append('<div id="window"></div>');
 	$('#dimensions').append('<div id="document"></div>');
@@ -49,7 +49,7 @@ function toggleSeconndaryPage(activate) {
 $(document).ready(function () {
 
 	// Call the function to show the screen, window, and document dimensions on the page
-	// showDimensions();
+	showDimensions();
 
 	// Add click functions to the main section button to go to the secondary page
 	let selectedOpacity = 0.3;
