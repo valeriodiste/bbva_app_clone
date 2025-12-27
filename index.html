@@ -35,13 +35,27 @@
 </head>
 <body>
 
-	<div id="main" stylel="opacity:0;transition:opacity 0.5s;">
+	<div id="main" style="opacity:0;transition:opacity 0.5s;">
 		
 		<!-- Main section -->
-		<div id="main-section" class="">
+		<div id="main-section" style="overflow: hidden;" class="">
+			<!-- Add the image -->
+			<div class="screenshots-container" >
+				<img src="./screenshots/screenshot_06.png"/>
+			</div>
+			<!-- Click area for the buttons -->
+			<div id="main-section-button"></div>
+			<!-- Secondary section content -->
+			<div class="secondary-section-content">
+			</div>
+		</div>
+		
+		<!-- Secondary section -->
+		<div id="secondary-section" class="hidden">
 			<!-- Add the image -->
 			<div class="screenshots-container">
-				<img src="./screenshots/screenshot_01_2.png">
+				<img id="main-screenshot-01" src="./screenshots/screenshot_01_2.png">
+				<img id="main-screenshot-02" src="./screenshots/screenshot_05.png">
 			</div>
 			<!-- Overlay for the top part -->
 			<div id="overlay-1"></div>
@@ -54,7 +68,7 @@
 							<span class="price-euro">€</span>
 						</div>
 						<div class="tab-val-2">
-							<span class="clickable-text">
+							<span class="clickable-text secondary-section-clickable-text">
 								Vedi uscite
 							</span>
 						</div>
@@ -66,7 +80,7 @@
 							<span class="price-euro">€</span>
 						</div>
 						<div class="tab-val-2">
-							<span class="clickable-text">
+							<span class="clickable-text secondary-section-clickable-text">
 								Vedi entrate
 							</span>
 						</div>
@@ -78,14 +92,14 @@
 							<span class="price-euro">€</span>
 						</div>
 						<div class="tab-val-2">
-							<span class="clickable-text">
+							<span class="clickable-text secondary-section-clickable-text">
 								Vedi risparmi
 							</span>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Overlay for the date of the ticket -->
+			<!-- Overlay for the scroll section -->
 			<div id="balance-1" class="account-balance">
 				<div class="small-balance">
 					<span id="balance-1-value" class="price-val">263.387,37</span>
@@ -93,163 +107,48 @@
 				</div>
 				<div class="balance">
 					<span id="balance-1-value" class="price-val">263.387,37</span>
-					<span style="font-size:0.7em;margin-left:0.15em;">€</span>
+					<span style="font-size:0.7em;margin-left:0.2em;">€</span>
 				</div>
 				<div>Disponibile</div>
 			</div>
 			<div id="balance-2" class="account-balance">
 				<div class="small-balance">
-					<span id="balance-1-value" class="price-val">263.387,37</span>
+					<span id="balance-1-value" class="price-val">13.532,64</span>
 					<span style="margin-left:0.15em;">€</span>
 				</div>
 				<div class="balance">
-					<span id="balance-1-value" class="price-val">13.387,37</span>
-					<span style="font-size:0.7em;margin-left:0.15em;">€</span>
+					<span id="balance-1-value" class="price-val">13.532,64</span>
+					<span style="font-size:0.7em;margin-left:0.2em;">€</span>
 				</div>
 				<div>2 ore fa</div>
 			</div>
 			<!-- Click area for the buttons -->
-			<div id="main-section-button"></div>
+			<!-- <div id="back-button"></div> -->
 			<div id="price-values-toggle"></div>
+			<!-- Buttons for click actions -->
+			<div id="secondary-section-button-01" class="secondary-section-button"></div>
+			<div id="secondary-section-button-02" class="secondary-section-button"></div>
+			<div id="secondary-section-button-03" class="secondary-section-button"></div>
+			<div id="secondary-section-button-04" class="secondary-section-button"></div>
+			<div id="secondary-section-button-05" class="secondary-section-button"></div>
 		</div>
-		
-		<!-- Secondary section -->
-		<div id="secondary-section" class="hidden">
-			<!-- Add the image -->
-			<div class="screenshots-container" >
-				<img src="./screenshots/screenshot_02.png"/>
-			</div>
-			<!-- "Back" button click area -->
-			<div id="back-button"></div>
-			<!-- Actual active ticket elements -->
-			<div class="active-ticket-container">
-				<!-- Header -->
-				<div class="active-ticket-header">
-					<div class="back-button arrow-white"></div>
-					<div class="header-title">Ticket attivo</div>
-					<div class="empty-aligner-div"></div>
+
+		<!-- Log In Section Overlay -->
+		<div id="login-overlay">
+			<div class="cover"></div>
+			<div class="login-container">
+				<div class="title">
+					Effettua l'accesso a BBVA per continuare
 				</div>
-				<div class="actual-ticket">
-					<!-- Central div -->
-					<div class="central-div">
-						<!-- BIS logo -->
-						<div class="ticket-bis-logo">
-							<img src="./images/bis_logo.png">
-						</div>
-						<!-- Ticket description -->
-						<div class="ticket-text">
-							<div class="ticket-title">
-								PALOMBARA SABINA - Corsa Semplice
-							</div>
-							<div class="ticket-description">
-								Questo tipo di biglietto di corsa semplice consente di viaggiare su una singola linea fra tutte quelle gestite. Esso è valido per una sola corsa.
-							</div>
-						</div>
-						<!-- QR Code section container -->
-						<div class="ticket-qr">
-							<div class="qr-section-header">
-								<div class="qr-section-header-left">
-									<div class="ticket-icon">
-										<img src="./images/ticket_icon.png">
-									</div>
-									<div>
-										Controllo e validazione
-									</div>
-								</div>
-								<div class="arrow-blue"></div>
-							</div>
-							<div class="qr-code-image">
-								<!-- NOTE: Sample QR code corresponds to http://mccr.it/vt?t=20052168&v=0735 -->
-								<div id="qr-code"></div>
-							</div>
-							<div class="qr-section-footer">
-								<div class="qr-button-text">Ingrandisci QRCode</div>
-								<div class="ticket-infos">
-									<div class="ticket-infos-left">
-										<div class="clock-icon">
-											<img src="./images/clock_icon.png"/>
-										</div>
-										<div class="current-time" id="current-time">
-											00:00:00
-										</div>
-									</div>
-									<div class="ticket-infos-right">
-										<div class="load-bar">
-											<div id="ticket-load-bar" class="load-bar-inner"></div>
-										</div>
-										<div class="lock-icon">
-											<img src="./images/lock_icon.png"/>
-										</div>
-										<div class="ticket-code">042</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Wave animation section container -->
-						<div class="ticket-animation">
-							<div class="wave-parts-container">
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-								<div class="wave-part"><img src="./images/wave_pattern_double.png"></div>
-							</div>
-						</div>
-						<!-- Other ticket infos -->
-						<div class="ticket-other-infos">
-							<div class="ticket-activation-info">
-								Attivato il: <span id="ticket-activation-date">???</span>
-							</div>
-							<div>
-								Emesso il:
-								<br>
-								<span id="ticket-emission-date">???</span>
-							</div>
-							<div class="cost-info">
-								<div>
-									Costo:
-								</div>
-								<div>
-									1,10 €
-								</div>
-							</div>
-							<div class="details-info">
-								<div>
-									Dettagli
-								</div>
-								<div>
-									<div>
-										Leggi tutto
-									</div>
-									<div class="arrow-blue"></div>
-								</div>
-							</div>
-							<div class="ticket-code-info">
-								<div>
-									Codice ticket:
-								</div>
-								<div>
-									3/<span id="ticket-code">26982</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<input id="password-input" type="password" placeholder="Password"/>
+				<button id="login-button" >
+					Accedi
+				</button>
+				<button class="alt-style" id="cancel-login-button" >
+					Annulla
+				</button>
 			</div>
+			
 		</div>
 
 	</div>

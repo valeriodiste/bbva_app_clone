@@ -4,25 +4,25 @@
 }
 :root {
 	/* Colors */
-	--main-color: #00587d;
-	--main-color-transparent: #00587d10;
-	--green-color: #358551;
-	/* --green-color: #2f8d3e; */
 	--prova: #eff5f7;
+	--v-offset: 6.575vh;
+	--v-offset-alt: 5.0vh;
 }
 * {
 	margin: 0;
 	padding: 0;
+	user-select: none;
 }
 html, body {
-	overflow: hidden;
 	font-family: BBVAnalyzr, Arial, sans-serif;
 	font-size: 48px;
-	user-select: none;
 	color: #151515;
 }
 body {
 	background-color: #000519;
+	width: 100vw;
+	height: 100vh;
+	/* overflow: hidden; */
 }
 img {
 	user-select: none;
@@ -49,13 +49,28 @@ img {
 	left: 0;
 	/* opacity: 1; */
 	z-index: -1;
+	overflow: visible;
 }
 .screenshots-container img {
 	/* object-fit: cover; */
-	object-fit: cover;
+	object-fit: contain;
+	width: 100vw;
 	position: absolute;
 	/* top: -3.5vh; */
 	left: 0;
+}
+.screenshots-container img:nth-child(1) {
+	z-index: -1;
+}
+.screenshots-container img:nth-child(2) {
+	z-index: -2;
+}
+.screenshots-container img:nth-child(2) {
+	z-index: -3;
+}
+#main-screenshot-01 {}
+#main-screenshot-02 {
+	top: 45vh
 }
 /* Main content container */
 #main {
@@ -64,9 +79,11 @@ img {
 	justify-content: flex-start;
 	align-items: center;
 	width: 100vw;
-	/* height: 93vh; */
 	height: 100vh;
+	/* height: 93vh; */
 	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 #main-section {
 	width: 100%;
@@ -75,18 +92,12 @@ img {
 	top: 0;
 	left: 0;
 }
-#main-section.hidden {
-	opacity: 0;
-}
 #secondary-section {
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
-}
-#secondary-section.hidden {
-	opacity: 0;
 }
 /* Generic transparent class */
 .transparent {
@@ -96,9 +107,9 @@ img {
 #overlay-1 {
 	/* width: 100%; */
 	width: 100%;
-	height: 10vh;
+	height: 12.5vh;
 	position: absolute;
-	top: 11.0vh;
+	top: 15.5vh;
 	/* left: 53vw; */
 	background-color: #000519;
 	font-size: 0.9em;
@@ -110,7 +121,7 @@ img {
 	color: #ffffff;
 	/* Set opacity and border for testing */
 	/* border: white 2px solid; */
-	/* opacity: 50%; */
+	/* opacity: 20%; */
 }
 /* Button mask */
 .account-balance {
@@ -143,7 +154,7 @@ img {
 }
 .account-balance .balance {
 	/* font-weight: bold; */
-	font-size: 1.65em;
+	font-size: 1.5em;
 	margin-top: -0.3em;
 	display: inline-flex;
 	flex-direction: row;
@@ -151,58 +162,76 @@ img {
 }
 .account-balance .small-balance {
 	position: absolute;
-	top: -6.75vh;
+	top: -7.375vh;
 	right: -4.75vw;
 	background-color: #000519;
-	/* background-color: #ff0000; */
+	/* background-color: #ff000040; */
 	padding: 1vh 1.5vw 1vh 25vw;
 	border-radius: 0;
 	/* opacity: 0.5; */
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
 }
 #balance-1 {
 	/* top: 33.15vh - 3.5vh; */
-	top: 29.65vh;
+	/* top: 29.65vh; */
+	/* top: calc(29.65vh + var(--v-offset)); */
+	/* top: 29.65vh + 6.575vh; */
+	top: 36.7vh;
 }
 #balance-2 {
 	/* top: 51.15vh - 3.5vh; */
-	top: 47.65vh;
+	/* top: 47.65vh; */
+	/* top: calc(47.65vh + var(--v-offset)); */
+	top: 56.575vh;
 }
 #scroll-tabs-1 {
 	/* top: 14vh - 3.5vh; */
-	top: 10.5vh;
+	/* top: 10.5vh; */
+	/* top: calc(10.5vh + var(--v-offset-alt)); */
+	top: 15.5vh;
 }
 .scroll-tabs {
 	position: absolute;
 	/* Scrollable horizontally */
-	overflow-x: auto;
+	/* overflow-x: hidden;
+	overflow-y: hidden; */
+	overflow: hidden;
 	white-space: nowrap;
-	padding: 1vh 3.675vw;
+	padding: 1vh 0vw;
 	width: 100vw;
-	overflow-y: hidden;
 	box-sizing: border-box;
 	/* Opacity for testing */
 	/* opacity: 0.1; */
+	pointer-events: all;
 }
-.scroll-tabs::-webkit-scrollbar {
+.scroll-tabs *::-webkit-scrollbar {
 	height: 0;
 	opacity: 0;
 }
-.scroll-tabs::-webkit-scrollbar-thumb {
+.scroll-tabs *::-webkit-scrollbar-thumb {
 	background-color: transparent;
 }
-.scroll-tabs::-webkit-scrollbar-track {
+.scroll-tabs *::-webkit-scrollbar-track {
 	background-color: transparent;
 }
 .scroll-tabs-container {
-	display: inline-flex;
+	display: inline-block;
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
+	box-sizing: border-box;
+	width: 100vw;
+	overflow-x: scroll;
+	pointer-events: all;
+	padding: 0vh 3.675vw;
 }
 .scroll-tab {
 	display: inline-block;
 	width: 35vw;
-	height: 9vh;
+	height: 10.25vh;
 	background-color: #11192d;
 	border-radius: 3vw;
 	box-sizing: border-box;
@@ -211,7 +240,9 @@ img {
 	align-items: flex-start;
 	justify-content: center;
 	padding-left: 4vw;
-	margin-right: 2.5vw;
+	margin-right: 1vw;
+	display: inline-flex;
+	pointer-events: all;
 }
 .tab-val-1 {
 	font-size: 1.5em;
@@ -234,12 +265,15 @@ img {
 	font-weight: bold;
 }
 #main-section-button {
-	width: 100%;
-	height: 12vh;
+	width: 90%;
+	height: 8.5vh;
 	position: absolute;
 	/* top: 31.5vh - 3.5vh; */
-	top: 28vh;
+	/* top: 28vh; */
+	top: 38.5vh;
+	left: 5%;
 	background-color: #000519;
+	/* background-color: #ff0000; */
 	opacity: 0;
 	/* Make the div not selectable */
 	user-select: none;
@@ -248,15 +282,58 @@ img {
 	-ms-user-select: none;
 	z-index: 20;
 }
-#price-values-toggle {
-	width: 11vw;
-	height: 11vw;
+.secondary-section-button {
+	z-index: 9;
+	user-select: none;
 	position: absolute;
-	top: 1.5vh;
-	left: 1.5vh;
-	/* background-color: #ffffff; */
+	/* background-color: #ff0000; */
 	opacity: 0;
-	z-index: 20;
+}
+.secondary-section-clickable-text {
+	/* background-color: #ff0000; */
+}
+#secondary-section-button-01 {
+	width: 30vw;
+	height: 16vw;
+	top: 12vw;
+	right: 0;
+}
+#secondary-section-button-02 {
+	width: 100vw;
+	height: 23vw;
+	top: 72vw;
+	left: 0;
+}
+#secondary-section-button-03 {
+	width: 100vw;
+	height: 23vw;
+	top: 112vw;
+	left: 0;
+}
+#secondary-section-button-04 {
+	width: 100vw;
+	height: 23vw;
+	top: 153vw;
+	left: 0;
+}
+#secondary-section-button-05 {
+	width: 30vw;
+	height: 10vw;
+	top: 181vw;
+	right: 0;
+}
+#price-values-toggle {
+	width: 12.5vw;
+	height: 15vw;
+	position: absolute;
+	/* top: 1.5vh; */
+	top: 6.5vh;
+	left: 1.25vh;
+	background-color: #000519;
+	opacity: 0;
+	z-index: 60;
+	/* background-color: #ff0000;
+	opacity: 0.5; */
 }
 #back-button {
 	width: 12vw;
@@ -267,340 +344,96 @@ img {
 	opacity: 0;
 	z-index: 20;
 }
-/* Active ticket actual HTML elements */
-.active-ticket-container {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	background-color: var(--green-color);
-	display: inline-flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	/* pointer-events: none; */
-	/* opacity: 0.5; */
-}
-.active-ticket-header {
-	width: 100%;
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	height: 7.5%;
-	font-size: 1.12em;
-	font-weight: 400;
-	color: #ffffff;
-}
 .back-button {
 	margin-left: 6%;
 }
-.active-ticket-header .empty-aligner-div {
-	width: 3.5vw;
-	height: 100%;
-	content: '';
-	display: block;
-	margin-right: 6%;
-}
-.actual-ticket {
-	width: 100%;
-	height: calc(100vh - 7.5%);
-	max-height: calc(100vh - 7.5%);
-	overflow-x: hidden;
-	overflow-y: scroll;
-	padding-bottom: 1.25em;
-	display: block;
-}
-.actual-ticket::-webkit-scrollbar {
-	width: 0;
-}
-.actual-ticket::-webkit-scrollbar-thumb {
+#login-overlay {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
 	background-color: transparent;
-}
-.actual-ticket::-webkit-scrollbar-track {
-	background-color: transparent;
-}
-.central-div {
-	width: calc(100% - 5.7% * 2);
-	margin: 3% auto;
-	/* height: 80%; */
-	background-color: #ffffff;
-	border: 1px solid #00000070;
-	border-radius: 8px;
-	padding: 2.5% 4.5%;
-	box-sizing: border-box;
-	position: relative;
-}
-.ticket-bis-logo {
-	width: 22.5%;
-}
-.ticket-bis-logo img {
-	width: 100%;
-	height: 100%;
-	margin: 0 5%;
-	object-fit: contain;
-}
-.ticket-text {
-	width: 100%;
-}
-.ticket-title {
-	font-size: 1.1em;
-	font-weight: 600;
-	color: var(--main-color);
-	line-height: 1.15em;
-}
-.ticket-description {
-	/* font-size: 1.05em; */
-	font-size: 0.875em;
-	margin: 2.5% 0;
-	font-weight: 300;
-	line-height: 1.15em;
-}
-/* Ticket qr container */
-.ticket-qr {
-	width: 100%;
-	/* height: 200vw; */
-	margin-top: 1em;
-	background-color: var(--main-color-transparent);
-	border: 1px solid #00000020;
-	border-radius: 8px;
-	font-size: 0.92em;
-	font-weight: 600;
-	padding: 0.375em 0.85em;
-	box-sizing: border-box;
-}
-.qr-section-header {
-	width: 100%;
-	height: 12vw;
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	/* background-color: aqua; */
-}
-.qr-section-header-left {
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	line-height: 1.75em;
-}
-.ticket-icon {
-	width: 1.6em;
-	height: 1.6em;
-	margin-right: 0.85em;
-	/* margin-left: 0.85em; */
-}
-.ticket-icon img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-.qr-section-header .arrow-blue {
-	transform: rotate(90deg);
-	margin-right: 0.2em;
-}
-.qr-code-image {
-	width: 67vw;
-	height: 67vw;
-	margin: 1.45em calc((100% - 68vw) / 2);
-	/* background-color: blue; */
+	z-index: 100;
 	display: inline-flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	/* opacity: 0.95; */
+	font-size: 2em;
 }
-#qr-code {
-	width: 79%;
-	height: 79%;
-	background-color: #dfeaef;
-}
-.qr-section-footer {
+#login-overlay .cover {
 	width: 100%;
-	height: 19vw;
+	height: 100%;
+	background-color: #000519;
+	opacity: 0.85;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+#login-overlay .login-container {
+	color: white;
+	text-align: center;
 	display: inline-flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
-	color: var(--main-color);
-	line-height: 0.45em;
+	z-index: 10;
+	background-color: #11192d;
+	border-radius: 3.5vw;
+	width: 75%;
+	padding: 2.5vh 6.5vw;
 }
-.qr-button-text {
-	height: 40%;
-	font-size: 0.93em;
-	font-weight: 600;
-	/* background-color: #ffffff; */
-	line-height: 2em;
-}
-.ticket-infos {
+#login-overlay .login-container div {
 	width: 100%;
-	height: 58%;
-	margin-top: 2%;
+	margin-bottom: 2vh;
 	display: inline-flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	/* background-color: green; */
-	font-weight: normal;
+	flex-direction: column;
 }
-.ticket-infos-left {
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
-	font-size: 1.2em;
-}
-.ticket-infos-right {
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
-	font-size: 0.975em;
-	margin-right: 0.25em;
-}
-.ticket-infos .clock-icon {
-	width: 1.25em;
-	height: 1.25em;
-	margin-left: 0.35em;
-	margin-right: 0.35em;
-}
-.ticket-infos .clock-icon img {
+#login-overlay input[type="text"],
+#login-overlay input[type="password"] {
 	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-.ticket-infos .lock-icon {
-	width: 1em;
-	height: 1em;
-	margin-right: 0.325em;
-}
-.ticket-infos .lock-icon img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-.ticket-infos .load-bar {
-	width: 18.75vw;
-	height: 0.8em;
-	background-color: #00000020;
-	border-radius: 100vw;
-	margin-right: 0.375em;
-	border: 1px solid #00000030;
-}
-.load-bar-inner {
-	width: 100%;
-	height: 100%;
-	background-color: var(--main-color);
-	border-radius: 100vw;
-}
-/* Ticket animation container */
-.ticket-animation {
-	width: 100%;
-	height: 14.75vw;
-	margin-top: 0.02em;
-	/* background-color: red; */
-	/* background-color: #00000010; */
-	overflow: hidden;
-}
-.wave-parts-container {
-	width: 100%;
-	height: 100%;
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
-	animation: wave 8.25s infinite linear;
-}
-@keyframes wave {
-	0% {
-		transform: translateX(-200%);
-	}
-	100% {
-		transform: translateX(0%);
-	}
-}
-.wave-part {
-	height: 100%;
-	opacity: 0.7;
-}
-.wave-part img {
-	height: 100%;
-	object-fit: cover;
-}
-/* Ticket other infos */
-.ticket-other-infos {
-	width: 100%;
-	font-weight: 300;
-	font-size: 0.95em;
-	margin-top: 0.75em;
-	line-height: 1.35em;
-}
-.ticket-activation-info {
-	width: 100%;
-	background-color: var(--green-color);
-	color: #ffffff;
+	/* height: 6vh; */
+	border-radius: 1.25vh;
+	padding: 1.5vh 1.875vw;
 	box-sizing: border-box;
-	padding: 1.05em 0.85em;
-	border-radius: 8px;
-	margin-bottom: 0.75em;
+	font-size: 0.5em;
+	border: 0.125em solid #ffffff;
+	outline: 0.125em solid transparent;
 }
-#ticket-activation-date {
-	font-weight: 500;
+#login-overlay input[type="text"]:focus,
+#login-overlay input[type="password"]:focus {
+	border: 0.125em solid #6191bd;
+	outline: 0.125em solid #ffffff;
 }
-#ticket-emission-date {
-	font-weight: 500;
+#login-overlay input[type="text"]::placeholder,
+#login-overlay input[type="password"]::placeholder {
+	color: #cccccc;
 }
-.cost-info {
+#login-overlay button {
 	width: 100%;
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid #00000050;
-	padding: 0.5em 0 0.575em 0;
-	font-size: 1.25em;
-	margin-top: 0.35em;
+	background-color: #6191bd;
+	color: white;
+	border: none;
+	border-radius: 1.25vh;
+	cursor: pointer;
+	padding: 1.5vh 0;
+	font-size: 0.6em;
+	font-weight: bold;
 }
-.cost-info > div:nth-child(2) {
-	font-weight: 500;
+#login-overlay button.alt-style {
+	background-color: transparent;
+	border: 2px solid #6191bd;
+	color: #6191bd;
 }
-.details-info {
-	width: 100%;
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	font-weight: 500;
-	margin-top: 0.85em;
-	margin-bottom: 0.95em;
+#login-overlay .login-container .title {
+	color: #6191bd;
+	font-size: 0.8em;
+	font-weight: bold;
 }
-.details-info > div {
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
-}
-.details-info > div:nth-child(2) > div:nth-child(1) {
-	margin-right: 0.5em;
-	color: var(--main-color);
-}
-.details-info .arrow-blue {
-	transform: rotate(-90deg);
-	margin-right: 0.2em;
-}
-.ticket-code-info {
-	width: 100%;
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 0.5em;
-	margin-bottom: 0.85em;
-}
-.ticket-code {
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
-	line-height: 1em;
+#login-overlay .login-container * {
+	margin-bottom: 0.75vh;
 }
 @media (pointer:none), (pointer:coarse) {
 	/* #main {

@@ -23,7 +23,7 @@ function showDimensions() {
 }
 
 // Functoin to move to the "balance" page
-function toggleSeconndaryPage(activate) {
+function toggleSecondaryPage(activate) {
 
 	// Get the main and secondary sections
 	let mainSection = $("#main-section");
@@ -33,16 +33,34 @@ function toggleSeconndaryPage(activate) {
 		// Hide the main section and show the secondary section
 		mainSection.css("opacity", 0);
 		secondarySection.css("opacity", 1);
+		mainSection.css("pointer-events", "none");
+		secondarySection.css("pointer-events", "auto");
 		// Change the meta tag with name "theme-color" to "#358551" (green color)
 		// $("meta[name='theme-color']").attr("content", "#358551");
 	} else {
 		// Hide the secondary section and show the main section
 		mainSection.css("opacity", 1);
 		secondarySection.css("opacity", 0);
+		mainSection.css("pointer-events", "auto");
+		secondarySection.css("pointer-events", "none");
 		// Change back the meta tag with name "theme-color" to "#ffffff" (white color)
 		// $("meta[name='theme-color']").attr("content", "#ffffff");
 	}
 
+}
+
+// Function to toggle the login overlay
+function toggleLoginOverlay(activate) {
+	let loginOverlay = $("#login-overlay");
+	if (activate) {
+		$("#password-input").val("");
+		$("#password-input").css("border-color", "");
+		loginOverlay.css("opacity", 1);
+		loginOverlay.css("pointer-events", "auto");
+	} else {
+		loginOverlay.css("opacity", 0);
+		loginOverlay.css("pointer-events", "none");
+	}
 }
 
 // Wait for the document to be ready
@@ -62,9 +80,7 @@ $(document).ready(function () {
 	mainSectionButtonClickOverlay.on("touchend", function () {
 		// Wait 250ms before setting the opacity to 0 and activatig the secondary section
 		setTimeout(function () {
-			// Activate the secondary page
-			toggleSeconndaryPage(true);
-			// Set the opacity to 0
+			toggleSecondaryPage(true);
 			mainSectionButtonClickOverlay.css("opacity", "0");
 		}, 250);
 	});
@@ -72,8 +88,11 @@ $(document).ready(function () {
 	// On click of the "back" button on Android, go back to the main page
 	let backButton = $("#back-button");
 	backButton.on("click", function () {
-		toggleSeconndaryPage(false);
+		toggleSecondaryPage(false);
 	});
+
+	// At start, show the main page
+	toggleSecondaryPage(true);
 
 	// Get the price values elements and map their text values
 	let priceValues = $(".price-val");
@@ -97,19 +116,53 @@ $(document).ready(function () {
 	}
 
 	// At start, hide price values
-	let priceValuesOn = true;
 	togglePriceValues(false);
 
 	// On click on the "price-values-toggle" button, toggle the price values on and off
+	let priceValuesOn = false;
 	let priceValuesToggleButton = $("#price-values-toggle");
-	priceValuesToggleButton.on("click", function () {
-		priceValuesOn = !priceValuesOn;
-		togglePriceValues(priceValuesOn);
+	priceValuesToggleButton.on("touchstart", function () {
+		priceValuesToggleButton.css("opacity", selectedOpacity);
+	});
+	priceValuesToggleButton.on("touchend", function () {
+		setTimeout(() => {
+			priceValuesOn = !priceValuesOn;
+			togglePriceValues(priceValuesOn);
+			priceValuesToggleButton.css("opacity", "0");
+		}, 250);
 	});
 
 	// After 500ms, make the "#main" section opacity visible (1)
 	setTimeout(function () {
 		$("#main").css("opacity", 1);
 	}, 500);
+
+	// At start, hide the login overlay
+	toggleLoginOverlay(false);
+
+	$("#login-button").on("click", function () {
+		// toggleLoginOverlay(false);
+		// $("#password-input").val("");
+		$("#password-input").css("border-color", "#ff0000");
+	});
+	$("#cancel-login-button").on("click", function () {
+		setTimeout(() => {
+			toggleLoginOverlay(false);
+		}, 250);
+	});
+
+	let buttons = [];
+	buttons.push($(".secondary-section-button"));
+	buttons.push($(".secondary-section-clickable-text"));
+	for (let i = 0; i < buttons.length; i++) {
+		$(buttons[i]).on("click", function () {
+			setTimeout(() => {
+				toggleLoginOverlay(true);
+			}, 250);
+		});
+	}
+
+
+
 
 });
